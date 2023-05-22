@@ -87,6 +87,7 @@ input:not([type='checkbox']):not([type='radio'])::selection {
 
 h1,
 h2 {
+	margin-bottom: 28px;
 	font-weight: 400;
 	font-family: $f1;
 	line-height: 1.2;
@@ -109,7 +110,7 @@ blockquote,
 }
 
 p {
-	line-height: 1.4;
+	line-height: 1.55;
 }
 
 a {
