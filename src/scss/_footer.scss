@@ -1,8 +1,19 @@
 footer {
+	font-size: fsz(10, 14);
+	color: $c1;
+	background-color: $cb;
+
 	.container {
 		display: flex;
 		justify-content: space-between;
+		padding-top: 47px;
+		padding-bottom: 43px;
 	}
+}
+
+.footer__info,
+.footer__add {
+	display: flex;
 }
 
 .mico-logo-company {
@@ -11,6 +22,10 @@ footer {
 
 	strong {
 		display: block;
+		margin-bottom: 4px;
+		font-size: fsz(10, 14);
+		font-weight: 300;
+		line-height: 1;
 	}
 
 	svg,
@@ -24,10 +39,100 @@ footer {
 	}
 }
 
+.footer__list {
+	margin-bottom: 0;
+
+	a {
+		display: inline-block;
+		line-height: 1;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&+.footer__add {
+		padding-top: 4px;
+	}
+}
+
+.footer__list-1 {
+	li {
+		display: inline-block;
+		margin-bottom: 10px;
+
+		&:not(:last-child) {
+			margin-right: 16px;
+		}
+	}
+
+	a {
+		font-weight: 400;
+		color: $c1;
+
+		&:hover {
+			color: $c3;
+		}
+	}
+}
+
+.footer__list-2 {
+	li {
+		&:not(:last-child) {
+			margin-bottom: 7px;
+		}
+	}
+
+	a {
+		&:hover {
+			color: $c1;
+		}
+	}
+}
+
+.footer__contacts {
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	strong {
+		display: block;
+		font-weight: 300;
+		color: $c3;
+	}
+}
+
+.footer__copyright {
+	display: block;
+	line-height: 1.4;
+}
+
 @media (min-width: 1231px) {
-	footer {
-		.container {
-			justify-content: space-between;
+	.footer__bl-1 {
+		flex-grow: 1;
+	}
+
+	.footer__bl-2 {
+		padding-right: 75px;
+		padding-left: 30px;
+	}
+
+	.footer__info {
+		gap: 0 mp(118, 998);
+	}
+
+	.footer__add {
+		justify-content: space-between;
+		gap: 0 15px;
+
+		div {
+			&:last-child {
+				padding-right: 20px;
+			}
 		}
 	}
 }
