@@ -3,6 +3,7 @@
 import debounce from './modules/debounce';
 import modal from './modules/modal';
 import blocksStyles from './modules/blocksStyles';
+import toggleContent from './modules/toggleContent';
 import blockPosition from './modules/blockPosition';
 
 if ('ontouchstart' in document.documentElement) {
@@ -24,6 +25,7 @@ if (isMobile()) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	toggleContent();
 	debounce(function () {
 		blockPosition();
 		blocksStyles();
