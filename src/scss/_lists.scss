@@ -1,0 +1,83 @@
+.list-1 {
+	display: grid;
+}
+
+.list-1 {
+	grid-template-columns: repeat(5, 1fr);
+	gap: 47px 25px;
+}
+
+.list-style-1 {
+	a {
+		display: block;
+
+		&:hover {
+			text-decoration: none;
+
+			.list-img {
+				&:after {
+					animation: .5s cubic-bezier(.455, .03, .515, .955) both rotate-vert-center;
+				}
+
+				picture {
+					filter: blur(2px) grayscale(0.5);
+				}
+			}
+
+			strong {
+				color: $c3;
+			}
+		}
+	}
+
+	.list-img {
+		padding-top: 81.82%;
+		border-radius: 5px;
+
+		picture,
+		&:after {
+			@include trs;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			transform: translate(-50%, -50%);
+			width: 47px;
+			height: 47px;
+			border-radius: 50%;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='47' height='47' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%2335424A' d='M47 0H0v47h47V0Z'/%3E%3Cpath fill='%23C7BD74' d='M34 29.672c0 1.01-.146 1.9-.44 2.666a6.093 6.093 0 0 1-1.152 1.953 6.623 6.623 0 0 1-1.702 1.37c-.634.353-1.305.639-2.012.858a12.6 12.6 0 0 1-2.141.438c-.72.085-1.41.128-2.068.128H14v-1.607l1.976-.146c.269-.024.464-.122.586-.292a.847.847 0 0 0 .201-.53V14.575a.847.847 0 0 0-.201-.53c-.122-.17-.317-.267-.586-.291L14 13.607V12h10.027c1.489 0 2.764.14 3.825.42 1.073.268 1.952.663 2.635 1.187.683.523 1.183 1.156 1.5 1.898.317.743.476 1.582.476 2.52 0 .937-.177 1.734-.53 2.391a5.612 5.612 0 0 1-1.337 1.662c-.536.45-1.122.81-1.756 1.077-.634.268-1.226.475-1.775.62.842 0 1.671.104 2.489.31.83.196 1.573.524 2.232.987a5.15 5.15 0 0 1 1.592 1.826c.415.754.622 1.68.622 2.774Zm-4.08.31c0-1.703-.507-2.95-1.52-3.742-1.012-.79-2.518-1.186-4.519-1.186-.305 0-.646.012-1.025.036-.366.024-.713.049-1.043.073-.329.024-.616.049-.86.073-.244.024-.39.037-.439.037v9.877c.305.024.604.042.897.054.244.025.494.043.75.055h.677c1.317 0 2.421-.11 3.312-.329.903-.219 1.635-.547 2.196-.985a3.67 3.67 0 0 0 1.208-1.644c.244-.657.366-1.43.366-2.318Zm-1.5-11.702c0-1.472-.477-2.598-1.428-3.377-.952-.791-2.397-1.187-4.337-1.187-.195 0-.409.006-.64.018l-.64.037c-.196.012-.373.024-.531.036a5.096 5.096 0 0 1-.33.019v9.457c.171.012.342.018.512.018.147.012.293.018.44.018h.402c1.22 0 2.245-.11 3.074-.328.842-.232 1.52-.56 2.032-.986.512-.426.878-.95 1.097-1.57.232-.633.348-1.351.348-2.155Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Crect width='47' height='47' fill='%23fff' rx='23'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			opacity: 0;
+
+		}
+
+		&+strong {
+			margin-top: 20px;
+		}
+	}
+
+	strong {
+		display: block;
+		letter-spacing: 0.08em;
+		line-height: 1.3;
+		color: $cb;
+		text-align: center;
+		@include trs;
+	}
+}
+
+@keyframes rotate-vert-center {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -50%) rotateY(0)
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%) rotateY(360deg)
+	}
+}
