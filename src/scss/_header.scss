@@ -1,0 +1,27 @@
+header {
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.header__logo-company {
+	display: inline-block;
+}
+
+.header__nav {
+	ul {
+		margin-bottom: 0;
+	}
+
+	li,
+	a {
+		display: inline-block;
+	}
+
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

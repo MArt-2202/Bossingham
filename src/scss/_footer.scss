@@ -1,0 +1,41 @@
+footer {
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.mico-logo-company {
+	display: inline-block;
+	color: $c1;
+
+	strong {
+		display: block;
+	}
+
+	svg,
+	path {
+		fill: currentColor;
+	}
+
+	&:hover {
+		color: $c3;
+		text-decoration: none;
+	}
+}
+
+@media (min-width: 1231px) {
+	footer {
+		.container {
+			justify-content: space-between;
+		}
+	}
+}
+
+@media (max-width: 1230px) {
+	footer {
+		.container {
+			flex-direction: column;
+		}
+	}
+}
