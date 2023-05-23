@@ -1,5 +1,29 @@
 /*
 ===========================
+	CONTENT BLOCKS
+==========================
+*/
+
+.content {
+	display: flex;
+}
+
+.content__main {
+	flex-grow: 1;
+}
+
+.content__aside {
+	flex: none
+}
+
+@media (max-width: 1024px) {
+	.content {
+		flex-direction: column;
+	}
+}
+
+/*
+===========================
 	GROUNDWORKS
 ==========================
 */
@@ -129,5 +153,65 @@
 @media (min-width: 1231px) {
 	.our-works__info {
 		padding-left: mp(95, 1200);
+	}
+}
+
+/*
+===========================
+	ABOUT US
+==========================
+*/
+.about-us {
+	.container {
+		padding-left: mp(95, 1200);
+		padding-right: 36px;
+	}
+}
+
+.about-us__aside {
+	width: calc(min(320px, 100%));
+
+	p {
+		margin-bottom: 19px;
+		line-height: 1.45;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.about-us__main {
+	display: flex;
+	gap: 50px mp(50, 625);
+}
+
+.about-us__img {
+	width: 50%;
+
+	.list-img {
+		border-radius: 300px;
+		padding-top: 156.475%;
+	}
+}
+
+@media (min-width: 1025px) {
+	.about-us__content {
+		padding-bottom: 90px;
+	}
+
+	.about-us__aside {
+		h2 {
+			margin-bottom: 58px;
+		}
+	}
+
+	.about-us__content {
+		gap: 0 mp(90, 1066);
+	}
+
+	.about-us__img-1 {
+		position: relative;
+		top: 90px;
 	}
 }
