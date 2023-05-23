@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Grid } from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 
 export default function sliders() {
 	// LANDSCAPING SLIDER
@@ -45,18 +45,11 @@ export default function sliders() {
 		document.querySelector('.our-works-slider')
 	) {
 		if (document.querySelector('.our-works-slider .swiper-wrapper')?.children.length) {
-			const sliderHildrenLength = document.querySelector('.our-works-slider .swiper-wrapper')
-				?.children.length;
-
-			new Swiper('.our-works-slider', {
-				modules: [Navigation, Grid],
+			const swiper = new Swiper('.our-works-slider', {
+				modules: [Navigation],
 				on: {
 					init() {
-						if (document.querySelector('.our-works-slider-wrapper')) {
-							document
-								.querySelector('.our-works-slider-wrapper')
-								.classList.remove('style-2');
-						}
+						document.querySelector('.our-works-slider-wrapper').classList.remove('style-2');
 					},
 				},
 				loop: true,
@@ -67,10 +60,6 @@ export default function sliders() {
 				navigation: {
 					nextEl: '.our-works-slider__btn--next',
 					prevEl: '.our-works-slider__btn--prev',
-				},
-				grid: {
-					rows: 2,
-					fill: 'row',
 				},
 			});
 		} else if (document.querySelector('.our-works-slider-wrapper')) {
