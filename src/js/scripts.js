@@ -5,6 +5,7 @@ import modal from './modules/modal';
 import blocksStyles from './modules/blocksStyles';
 import toggleContent from './modules/toggleContent';
 import blockPosition from './modules/blockPosition';
+import sliders from './modules/sliders';
 
 if ('ontouchstart' in document.documentElement) {
 	document.body.classList.add('touchdevice');
@@ -25,6 +26,7 @@ if (isMobile()) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	sliders();
 	toggleContent();
 	debounce(function () {
 		blockPosition();
