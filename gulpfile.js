@@ -30,7 +30,10 @@ const gulp = require('gulp'),
 					use: {
 						loader: 'babel-loader',
 						options: {
-							plugins: ['@babel/plugin-proposal-optional-chaining'],
+							plugins: [
+								'@babel/plugin-proposal-optional-chaining',
+								'@babel/plugin-proposal-nullish-coalescing-operator',
+							],
 							presets: [
 								[
 									'@babel/preset-env',
