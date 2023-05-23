@@ -69,3 +69,65 @@
 		padding-left: mp(95, 1200);
 	}
 }
+
+/*
+===========================
+	OUR WORKS
+==========================
+*/
+.our-works {
+	padding-top: 90px;
+	padding-bottom: 100px;
+	background-color: $cb;
+}
+
+.our-works__info {
+	display: flex;
+	align-items: center;
+	gap: 0 60px;
+	color: $c1;
+
+	div {
+		p {
+			max-width: 250px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	h2,
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	&+.our-works-slider-wrapper {
+		margin-top: 50px;
+	}
+}
+
+.our-works {
+	.slider-btn {
+		top: -105px;
+		transform: none;
+	}
+}
+
+.our-works-slider__btn--prev {
+	right: 113px;
+}
+
+.our-works-slider__btn--next {
+	right: 55px;
+}
+
+.our-works-slider__item+.our-works-slider__item {
+	margin-top: 25px;
+}
+
+@media (min-width: 1231px) {
+	.our-works__info {
+		padding-left: mp(95, 1200);
+	}
+}
