@@ -126,6 +126,16 @@
 	}
 }
 
+.btn-primary {
+	color: $cb;
+	background-color: $c3;
+
+	&:hover {
+		color: $c3;
+		background-color: $cb;
+	}
+}
+
 .btn-style-1 {
 	position: relative;
 	display: inline-block;
@@ -152,6 +162,14 @@
 		}
 	}
 
+}
+
+.btn-style-2 {
+	font-weight: 700;
+}
+
+.btn-style-3 {
+	width: calc(min(216px, 1005));
 }
 
 .slider-wrapper {
