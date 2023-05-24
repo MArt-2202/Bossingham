@@ -6,6 +6,7 @@ import blocksStyles from './modules/blocksStyles';
 import toggleContent from './modules/toggleContent';
 import blockPosition from './modules/blockPosition';
 import sliders from './modules/sliders';
+import sendFormData from './modules/sendFormData';
 
 if ('ontouchstart' in document.documentElement) {
 	document.body.classList.add('touchdevice');
@@ -27,6 +28,18 @@ if (isMobile()) {
 
 document.addEventListener('DOMContentLoaded', () => {
 	sliders();
+	sendFormData({
+		closeBtn: '',
+		hiddenNodes: '[data-modal="modal-1"] .modal__info',
+		hasFormMessage: true,
+		formMessageNode: '[data-modal="modal-1"] .form__message',
+		formWrapper: '#consultation-form',
+		formSubmitBtn: '#consultation-form__submit',
+		dataAttr: '[data-key]',
+		requiredSelector: '[required]',
+		requiredClass: 'has-required',
+		dataModal: 'modal-1',
+	});
 	toggleContent();
 	debounce(function () {
 		blockPosition();
