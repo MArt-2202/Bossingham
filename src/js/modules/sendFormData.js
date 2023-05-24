@@ -1,18 +1,35 @@
 export default function sendFormData({
+	closeBtn,
+	hiddenNodes,
+	hasFormMessage,
+	formMessageNode,
 	formWrapper,
 	formSubmitBtn,
 	dataAttr,
 	requiredSelector,
 	requiredClass,
-	isSuccessMessage,
-	successMessageNode,
-	successMessageNodeVisible,
+	dataModal,
 }) {
 	if (document.querySelector(formWrapper)) {
 		const form = document.querySelector(formWrapper),
 			url = form.dataset?.action,
 			sendData = {},
-			formData = new FormData();
+			formData = new FormData(),
+			selectList = [];
+
+		if (document.querySelector(formWrapper).querySelector('select')) {
+			document
+				.querySelector(formWrapper)
+				.querySelectorAll('select')
+				.forEach((el) => {
+					const selectData = {
+						id: el.getAttribute('id'),
+						value: el.value,
+					};
+
+					selectList.push(selectData);
+				});
+		}
 
 		if (document.querySelector(formSubmitBtn)) {
 			document.querySelector(formSubmitBtn).addEventListener('click', function (e) {
@@ -23,6 +40,7 @@ export default function sendFormData({
 		}
 
 		form.addEventListener('submit', function (e) {
+			e.stopPropagation();
 			e.preventDefault();
 
 			if (form.querySelector(dataAttr)) {
@@ -42,36 +60,76 @@ export default function sendFormData({
 			fetch(url, {
 				method: 'POST',
 				body: formData,
-				// headers: {
-				// 	'Content-type': 'application/json; charset=UTF-8',
-				// },
 			})
-				// .then((response) => response.json())
-				.then((data) => {
-					// document.body.style.overflowY = '';
-					// document.body.style.paddingRight = '';
+				.then(() => {
+					document.body.style.overflowY = '';
+					document.body.style.paddingRight = '';
 
-					// document.querySelector('.modal-overlay.show').classList.add('dn');
-					// document.querySelector('.modal-overlay.show').classList.remove('show');
+					if (!hasFormMessage && dataModal !== '') {
+						const modal = document.querySelector(`[data-modal=${dataModal}]`);
+
+						modal.classList.remove('dn');
+						modal.classList.add('show');
+					}
+
+					if (hasFormMessage && formMessageNode !== '') {
+						const formMessage = document.querySelector(formMessageNode);
+						formMessage.style.display = 'block';
+
+						if (closeBtn !== '') {
+							document.querySelector(closeBtn).classList.add('show');
+						}
+					}
 
 					form.classList.remove('has-required');
 
 					if (form.querySelector('input')) {
 						form.querySelectorAll('input').forEach((el) => {
-							if (el.type !== 'RADIO' || el.type !== 'CHECKBOX') {
+							if (el.type !== 'radio') {
 								el.value = '';
+							}
+							if (el.type === 'checkbox' && el.checked) {
+								el.checked = false;
 							}
 						});
 					}
 
-					if (
-						isSuccessMessage &&
-						document.querySelector(successMessageNode) &&
-						successMessageNodeVisible
-					) {
-						document
-							.querySelector(successMessageNode)
-							.classList.add(successMessageNodeVisible);
+					if (selectList.length) {
+						selectList.forEach((el) => {
+							if (document.querySelector(`#${el.id}`)) {
+								document.querySelector(`#${el.id}`).value = `${el.value}`;
+							}
+						});
+					}
+
+					if (hiddenNodes !== '') {
+						if (document.querySelector(`[data-modal="${dataModal}"]`)) {
+							const wrapper = document.querySelector(`[data-modal="${dataModal}"]`);
+							wrapper.querySelectorAll(hiddenNodes).forEach((el) => {
+								el.classList.add('hidden');
+							});
+						} else {
+							document.querySelectorAll(hiddenNodes).forEach((el) => {
+								el.classList.add('hidden');
+							});
+							if (
+								closeBtn !== '' &&
+								document.querySelector(closeBtn).classList.contains('show')
+							) {
+								document.querySelector(closeBtn).addEventListener('click', function (e) {
+									e.preventDefault();
+									e.stopPropagation();
+
+									document.querySelector(closeBtn).classList.remove('show');
+									if (formMessage) {
+										formMessage.style.display = 'none';
+									}
+									document.querySelectorAll(hiddenNodes).forEach((el) => {
+										el.classList.remove('hidden');
+									});
+								});
+							}
+						}
 					}
 				})
 				.catch((error) => {
