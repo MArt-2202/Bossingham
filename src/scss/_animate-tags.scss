@@ -5,7 +5,9 @@ main p,
 .top-section__add .btn,
 .top-section__add .modal-btn,
 .top-section__img,
-.about-us__img {
+.about-us__img,
+.breadcrumbs li,
+.info__btn {
 	opacity: 0;
 }
 
@@ -18,7 +20,9 @@ main p,
 	.top-section__add .btn,
 	.top-section__add .modal-btn,
 	.top-section__img,
-	.about-us__img {
+	.about-us__img,
+	.breadcrumbs li,
+	.info__btn {
 		animation-duration: 0.5s;
 		animation-iteration-count: 1;
 		animation-timing-function: ease-in-out;
@@ -44,6 +48,14 @@ main p,
 			}
 		}
 	}
+
+	@for $i from 1 through 20 {
+		.breadcrumbs {
+			>li:nth-child(#{$i}) {
+				animation-delay: $i * 0.1s;
+			}
+		}
+	}
 }
 
 .mobile-user-agent {
@@ -55,7 +67,9 @@ main p,
 	.top-section__add .btn,
 	.top-section__add .modal-btn,
 	.top-section__img,
-	.about-us__img {
+	.about-us__img,
+	.breadcrumbs li,
+	.info__btn {
 		opacity: 1;
 	}
 }
