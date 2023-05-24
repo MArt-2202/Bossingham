@@ -17,6 +17,8 @@ export default function sendFormData({
 			formData = new FormData(),
 			selectList = [];
 
+		let formMessage;
+
 		if (document.querySelector(formWrapper).querySelector('select')) {
 			document
 				.querySelector(formWrapper)
@@ -73,7 +75,7 @@ export default function sendFormData({
 					}
 
 					if (hasFormMessage && formMessageNode !== '') {
-						const formMessage = document.querySelector(formMessageNode);
+						formMessage = document.querySelector(formMessageNode);
 						formMessage.style.display = 'block';
 
 						if (closeBtn !== '') {
