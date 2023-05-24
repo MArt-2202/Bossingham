@@ -1,4 +1,4 @@
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, EffectFade } from 'swiper';
 
 export default function sliders() {
 	// LANDSCAPING SLIDER
@@ -45,7 +45,7 @@ export default function sliders() {
 		document.querySelector('.our-works-slider')
 	) {
 		if (document.querySelector('.our-works-slider .swiper-wrapper')?.children.length) {
-			const swiper = new Swiper('.our-works-slider', {
+			new Swiper('.our-works-slider', {
 				modules: [Navigation],
 				on: {
 					init() {
@@ -71,5 +71,48 @@ export default function sliders() {
 		document.querySelector('.our-works-slider-wrapper')
 	) {
 		document.querySelector('.our-works-slider-wrapper').classList.remove('style-2');
+	}
+
+	// INFO SLIDER
+	if (document.querySelector('.info-slider')) {
+		if (document.querySelector('.info-slider .swiper-wrapper').children.length) {
+			if (
+				[...document.querySelectorAll('.info-slider-wrapper .swiper-wrapper .swiper-slide')]
+					?.length < 2
+			) {
+				if (document.querySelector('.info-slider-wrapper')) {
+					document.querySelector('.info-slider-wrapper').classList.remove('style-2');
+					document
+						.querySelectorAll('.info-slider-wrapper .slider-btn')
+						.forEach((btn) => (btn.style.display = 'none'));
+				}
+			} else {
+				new Swiper('.info-slider', {
+					modules: [Navigation, EffectFade],
+					on: {
+						init() {
+							document
+								.querySelectorAll('.info-slider-wrapper .slider-btn')
+								.forEach((btn) => (btn.style.display = ''));
+							if (document.querySelector('.info-slider-wrapper')) {
+								document.querySelector('.info-slider-wrapper').classList.remove('style-2');
+							}
+						},
+					},
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true,
+					},
+					setWrapperSize: true,
+					loop: true,
+					navigation: {
+						prevEl: '.info-slider__btn--prev',
+						nextEl: '.info-slider__btn--next',
+					},
+				});
+			}
+		} else if (document.querySelector('.info-slider-wrapper')) {
+			document.querySelector('.info-slider-wrapper').classList.remove('style-2');
+		}
 	}
 }
