@@ -52,8 +52,7 @@ export default function toggleContent() {
 					overlay.classList.remove('overlay-visible');
 
 				if (
-					!document.querySelector('.modal-overlay.show') &&
-					window.matchMedia('(max-width: 1200px)').matches
+					!document.querySelector('.modal-overlay.show')
 				) {
 					document.body.style.overflowY = '';
 					document.body.style.paddingRight = '';
