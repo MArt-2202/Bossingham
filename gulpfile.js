@@ -539,8 +539,8 @@ exports.default = series(
 		// copyVideo,
 		copyFavicon,
 		// copyAddJSFiles,
-		script
-		// plugins
+		script,
+		plugins
 	),
 	// criticalCss,
 	watchChanges
