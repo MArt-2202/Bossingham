@@ -46,14 +46,12 @@ export default function toggleContent() {
 				}
 			}
 
-			if (!target.closest('.toggle-wrapper')) {
+			if (!target.closest('.toggle-wrapper') && !target.closest('.modal-btn')) {
 				toggleBtn.classList.remove('toggle-btn-style');
 				toggleContent.classList.remove('content-visible'),
 					overlay.classList.remove('overlay-visible');
 
-				if (
-					!document.querySelector('.modal-overlay.show')
-				) {
+				if (!document.querySelector('.modal-overlay.show')) {
 					document.body.style.overflowY = '';
 					document.body.style.paddingRight = '';
 				}
