@@ -53,10 +53,6 @@
 }
 
 .list-style-1 {
-	>div .list-img {
-		cursor: default;
-	}
-
 	a {
 		display: block;
 
@@ -148,8 +144,23 @@
 	}
 }
 
+.list-style-2 {
+	.list-img {
+		padding-top: 67.83%;
+		border-radius: 0;
+	}
+}
+
+.list-style-3 {
+	>div {
+		.list-img {
+			cursor: zoom-in;
+		}
+	}
+}
+
 .mobile-user-agent {
-	.list-style-1 {
+	.list-style-3 {
 		>div .list-img {
 			cursor: default;
 			pointer-events: none;
@@ -160,13 +171,6 @@
 				}
 			}
 		}
-	}
-}
-
-.list-style-2 {
-	.list-img {
-		padding-top: 67.83%;
-		border-radius: 0;
 	}
 }
 
