@@ -26,12 +26,12 @@ export default function sliders() {
 				},
 				breakpoints: {
 					1230: { slidesPerView: 5, spaceBetween: 25 },
-					1024: { slidesPerView: 5, spaceBetween: 25 },
-					768: { slidesPerView: 4, spaceBetween: 30 },
-					576: { slidesPerView: 3, spaceBetween: 20 },
+					1024: { slidesPerView: 4, spaceBetween: 25 },
+					768: { slidesPerView: 3, spaceBetween: 25 },
+					576: { slidesPerView: 3, spaceBetween: 25 },
 					415: { slidesPerView: 2, spaceBetween: 20 },
 					360: { slidesPerView: 2, spaceBetween: 15 },
-					300: { slidesPerView: 1, spaceBetween: 15 },
+					300: { slidesPerView: 2, spaceBetween: 15 },
 				},
 			});
 		} else if (document.querySelector('.landscaping-slider-wrapper')) {
