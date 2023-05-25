@@ -216,6 +216,13 @@
 	}
 }
 
+@media (max-width: 1200px) {
+	.slider-btn {
+		width: 35px;
+		height: 35px;
+	}
+}
+
 .style-1 {
 	margin-bottom: 100px;
 }
@@ -223,4 +230,10 @@
 .style-2 {
 	height: 235px;
 	overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+	.style-1 {
+		margin-bottom: 80px;
+	}
 }
