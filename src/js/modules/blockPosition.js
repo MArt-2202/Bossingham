@@ -3,6 +3,9 @@ const bl2 = document.querySelector('.header__s_ocial');
 const bl3 = document.querySelector('.header__bl-2>div:nth-child(2)');
 const bl4 = document.querySelector('.header__bl-2>div:nth-child(3)');
 const bl5 = document.querySelector('.toggle__add');
+const bl6 = document.querySelector('.top-section__modal-btn');
+const bl7 = document.querySelector('.top-section__aside');
+const bl8 = document.querySelector('.top-section__img-2');
 
 export default function blockPosition() {
 	if (window.matchMedia('(min-width: 361px)').matches) {
@@ -45,6 +48,9 @@ export default function blockPosition() {
 			document.body.classList.add('min-1025');
 
 			if (document.querySelector('.min-1025')) {
+				if (bl6 && bl8) {
+					bl8.append(bl6);
+				}
 			}
 		}
 	}
@@ -91,6 +97,9 @@ export default function blockPosition() {
 
 			if (document.querySelector('.max-1024')) {
 				if (document.querySelector('.max-1024')) {
+					if (bl6 && bl7) {
+						bl7.append(bl6);
+					}
 				}
 			}
 		}
