@@ -102,6 +102,16 @@ h2 {
 	font-size: fsz(50, 14);
 }
 
+@media (max-width: 1024px) {
+	h1 {
+		font-size: fsz(50, 14);
+	}
+
+	h2 {
+		font-size: fsz(36, 14);
+	}
+}
+
 p,
 ul,
 ol,
