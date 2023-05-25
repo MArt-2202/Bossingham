@@ -30,6 +30,12 @@ main {
 	padding-top: 80px;
 }
 
+@media (max-width: 1200px) {
+	main {
+		padding-top: 135px;
+	}
+}
+
 picture::selection,
 img::selection,
 table th::selection,
@@ -109,6 +115,26 @@ h2 {
 
 	h2 {
 		font-size: fsz(36, 14);
+	}
+}
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: fsz(46, 14);
+	}
+
+	h2 {
+		font-size: fsz(32, 14);
+	}
+}
+
+@media (max-width: 360px) {
+	h1 {
+		font-size: fsz(42, 14);
+	}
+
+	h2 {
+		font-size: fsz(30, 14);
 	}
 }
 
