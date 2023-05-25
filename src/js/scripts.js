@@ -49,6 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		download: false,
 		mode: 'lg-fade',
 	});
+	lightbox({
+		container: '#our-works__lightbox',
+		selector: '.our-works-slider__item',
+		plugins: [lgZoom],
+		speed: 500,
+		zoom: true,
+		download: false,
+		mode: 'lg-fade',
+	});
 	sendFormData({
 		closeBtn: '',
 		hiddenNodes: '[data-modal="modal-1"] .modal__info',
