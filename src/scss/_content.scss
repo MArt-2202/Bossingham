@@ -171,6 +171,18 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	.groundworks {
+		h2 {
+			&~p {
+				&:last-of-type {
+					margin-bottom: 37px;
+				}
+			}
+		}
+	}
+}
+
 /*
 ===========================
 	LANDSCAPING
