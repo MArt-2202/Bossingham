@@ -1,4 +1,9 @@
-// BLOCK POSITION
+const bl1 = document.querySelector('.header__contacts');
+const bl2 = document.querySelector('.header__s_ocial');
+const bl3 = document.querySelector('.header__bl-2>div:nth-child(2)');
+const bl4 = document.querySelector('.header__bl-2>div:nth-child(3)');
+const bl5 = document.querySelector('.toggle__add');
+
 export default function blockPosition() {
 	if (window.matchMedia('(min-width: 361px)').matches) {
 		document.body.classList.remove('max-360');
@@ -51,6 +56,12 @@ export default function blockPosition() {
 			document.body.classList.add('min-1201');
 
 			if (document.querySelector('.min-1201')) {
+				if (bl1 && bl3) {
+					bl3.append(bl1);
+				}
+				if (bl2 && bl4) {
+					bl4.append(bl2);
+				}
 			}
 		}
 	}
@@ -62,6 +73,12 @@ export default function blockPosition() {
 			document.body.classList.add('max-1200');
 
 			if (document.querySelector('.max-1200')) {
+				if (bl1 && bl5) {
+					bl5.prepend(bl1);
+				}
+				if (bl2 && bl5) {
+					bl5.append(bl2);
+				}
 			}
 		}
 	}
