@@ -144,7 +144,7 @@
 
 @media (max-width: 1200px) {
 	.top-section {
-		margin-top: -80px;
+		margin-top: -35px;
 	}
 
 	.top-section__main {
@@ -653,4 +653,25 @@
 	.info__content {
 		padding-left: mp(95, 1200);
 	}
+}
+
+@media (max-width: 1024px) {
+	.info__aside {
+		margin-left: auto;
+		margin-right: auto;
+
+		h1+.info-slider-wrapper {
+			display: block;
+			margin-bottom: 40px;
+		}
+	}
+
+	.info-slider-wrapper+.info__add {
+		display: block;
+		width: calc(min(430px, 100%));
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 40px;
+	}
+
 }
