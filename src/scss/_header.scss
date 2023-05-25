@@ -348,8 +348,9 @@ header {
 
 	.header__contacts {
 		p {
-			text-align: center;
+			line-height: 1.2;
 			color: $cb;
+			text-align: center;
 		}
 
 		[href^="tel"] {
@@ -362,6 +363,8 @@ header {
 
 	.header__s_ocial {
 		a {
+			width: 35px;
+			height: 35px;
 			color: $cb;
 		}
 	}
