@@ -360,6 +360,84 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	.our-works {
+		padding-top: 73px;
+		padding-bottom: 80px;
+	}
+}
+
+.mobile-user-agent {
+	.our-works {
+		.slider-btn {
+			display: none;
+		}
+
+		.swiper-wrapper {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
+		}
+
+		.our-works-slider__item+.our-works-slider__item {
+			margin-top: 0;
+		}
+
+		.swiper-slide {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
+
+			a {
+				height: 100%;
+			}
+
+			.list-img {
+				padding-top: 81.82%;
+				border-radius: 5px;
+			}
+		}
+	}
+
+	.our-works__info+.our-works-slider-wrapper {
+		margin-top: 37px;
+	}
+
+	.our-works__info {
+		flex-wrap: wrap;
+		gap: 0 20px;
+	}
+}
+
+@media (max-width: 576px) {
+	.mobile-user-agent {
+		.our-works {
+			.swiper-wrapper {
+				grid-template-columns: repeat(1, 1fr);
+				gap: 20px;
+			}
+
+			.swiper-slide {
+				gap: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width:360px) {
+	.mobile-user-agent {
+		.our-works {
+			.swiper-wrapper {
+				gap: 15px;
+			}
+
+			.swiper-slide {
+				gap: 15px;
+			}
+		}
+	}
+}
+
 /*
 ===========================
 	ABOUT US
