@@ -6,6 +6,9 @@ const bl5 = document.querySelector('.toggle__add');
 const bl6 = document.querySelector('.top-section__modal-btn');
 const bl7 = document.querySelector('.top-section__aside');
 const bl8 = document.querySelector('.top-section__img-2');
+const bl9 = document.querySelector('.info__add');
+const bl10 = document.querySelector('.info__aside h1');
+const bl11 = document.querySelector('.info-slider-wrapper');
 
 export default function blockPosition() {
 	if (window.matchMedia('(min-width: 361px)').matches) {
@@ -50,6 +53,9 @@ export default function blockPosition() {
 			if (document.querySelector('.min-1025')) {
 				if (bl6 && bl8) {
 					bl8.append(bl6);
+				}
+				if (bl9 && bl10) {
+					bl10.after(bl9);
 				}
 			}
 		}
@@ -99,6 +105,9 @@ export default function blockPosition() {
 				if (document.querySelector('.max-1024')) {
 					if (bl6 && bl7) {
 						bl7.append(bl6);
+					}
+					if (bl9 && bl11) {
+						bl11.after(bl9);
 					}
 				}
 			}
