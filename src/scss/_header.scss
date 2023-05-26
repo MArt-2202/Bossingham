@@ -124,11 +124,6 @@ header {
 
 	&:hover {
 		background-color: $c1;
-
-		&:before,
-		&:after {
-			background-color: $c5;
-		}
 	}
 }
 
@@ -290,6 +285,7 @@ header {
 		width: 100%;
 
 		.container {
+			position: relative;
 			padding-top: 10px;
 			padding-bottom: 10px;
 			align-items: center;
@@ -313,6 +309,8 @@ header {
 	}
 
 	.header__logo-company {
+		position: relative;
+		top: 6px;
 		width: 192px;
 	}
 
@@ -363,8 +361,6 @@ header {
 
 	.header__s_ocial {
 		a {
-			width: 35px;
-			height: 35px;
 			color: $cb;
 		}
 	}
