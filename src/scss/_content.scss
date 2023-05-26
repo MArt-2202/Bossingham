@@ -157,7 +157,25 @@
 }
 
 @media (max-width: 1024px) {
+	.top-section {
+		position: relative;
+		background: url(../img/bg-img-2.jpg) no-repeat 50% 0;
+		background-size: cover;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($cb, 0.85);
+		}
+	}
+
 	.top-section__content {
+		position: relative;
+		z-index: 1;
 		padding-top: 30px;
 		padding-bottom: 30px;
 		align-items: center;
@@ -672,6 +690,13 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 40px;
+	}
+
+	.info__btn {
+		display: table;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 }
