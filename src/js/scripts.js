@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		animatedClass: 'slideInUp',
 	});
 	scrollAnimateNodes({
-		node: 'main p, .top-section__add .btn, .top-section__add .modal-btn, .top-section__img, .about-us__img, .breadcrumbs li, .info__btn',
+		node: 'main p, .top-section__add .btn, .top-section__add .modal-btn, .top-section__img, .about-us__img, .breadcrumbs li, ul:not([role="menu"], .s_ocial) li, ol:not([role="menu"], .s_ocial) li, .info__btn',
 		animatedClass: 'fadeIn',
 	});
 	lightbox({
@@ -52,6 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	lightbox({
 		container: '#our-works__lightbox',
 		selector: '.our-works-slider__item',
+		plugins: [lgZoom],
+		speed: 500,
+		zoom: true,
+		download: false,
+		mode: 'lg-fade',
+	});
+	lightbox({
+		container: '#lightbox',
+		selector: '.lightbox__item',
 		plugins: [lgZoom],
 		speed: 500,
 		zoom: true,
