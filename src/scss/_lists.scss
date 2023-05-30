@@ -1,10 +1,16 @@
-.list-1 {
+.list-1,
+.list-2 {
 	display: grid;
 }
 
 .list-1 {
 	grid-template-columns: repeat(5, 1fr);
 	gap: 47px 25px;
+}
+
+.list-2 {
+	grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
 }
 
 @media (max-width: 1024px) {
@@ -20,8 +26,13 @@
 }
 
 @media (max-width: 576px) {
-	.list-1 {
+
+	.list-1,
+	.list-2 {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.list-1 {
 		gap: 38px 20px;
 
 		>div {
@@ -36,6 +47,10 @@
 			}
 		}
 	}
+
+	.list-2 {
+		gap: 20px;
+	}
 }
 
 @media (max-width: 360px) {
@@ -49,6 +64,10 @@
 				}
 			}
 		}
+	}
+
+	.list-2 {
+		gap: 15px;
 	}
 }
 
