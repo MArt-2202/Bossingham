@@ -1,7 +1,11 @@
+@use 'sass:string';
+@use 'sass:math';
+@use 'sass:color';
+
 // FONT FACE
 @mixin font-face($font-name, $path, $weight: normal, $style: normal, $font-display: swap) {
 	@font-face {
-		font-family: quote($font-name);
+		font-family: string.quote($font-name);
 		src: url(../fonts/#{$path}.woff2) format('woff2'),
 		url(../fonts/#{$path}.woff) format('woff');
 		font-weight: $weight;
@@ -133,5 +137,5 @@
 
 // TRANSITION
 @mixin trs($tRs: all) {
-	transition: all 0.3s ease-in-out;
+	transition: $tRs 0.3s ease-in-out;
 }
