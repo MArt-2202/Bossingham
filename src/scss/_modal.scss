@@ -1,3 +1,5 @@
+@use 'mixins';
+
 .modal-overlay {
 	position: fixed;
 	top: 0;
@@ -6,11 +8,11 @@
 	width: 100%;
 	height: 100%;
 	padding: 20px;
-	background-color: rgba($cb, 0.9);
+	background-color: rgba(#35424A, 0.9);
 	text-align: center;
 	visibility: hidden;
 	opacity: 0;
-	@include trs;
+	@include mixins.trs;
 }
 
 .modal {
@@ -40,13 +42,13 @@
 	padding: 48px 75px 60px 75px;
 	overflow-y: auto;
 	overscroll-behavior-y: contain;
-	background-color: $c1;
+	background-color: var(--c1);
 	border-radius: 100px 0px 100px 100px;
 	text-align: left;
 	opacity: 0;
 	-webkit-transform: scale(0);
 	transform: scale(0);
-	@include trs;
+	@include mixins.trs;
 	transition-delay: 100ms;
 
 	.video-wrapper {
@@ -82,17 +84,17 @@
 	z-index: 2;
 	padding: 0;
 	cursor: pointer;
-	color: $cb;
+	color: var(--cb);
 
 	svg {
 		width: 13px;
 		height: 13px;
 		fill: currentColor;
-		@include trs;
+		@include mixins.trs;
 	}
 
 	&:hover {
-		color: $c5;
+		color: var(--c5);
 	}
 }
 
