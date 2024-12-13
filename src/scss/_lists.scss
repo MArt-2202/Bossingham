@@ -1,3 +1,5 @@
+@use 'mixins';
+
 .list-1,
 .list-2 {
 	display: grid;
@@ -118,7 +120,7 @@
 
 		picture,
 		&:after {
-			@include trs;
+			@include mixins.trs;
 		}
 
 		&:before {
@@ -130,8 +132,8 @@
 			width: 100%;
 			height: 100%;
 			opacity: 0;
-			background-color: rgba($cb, 0.5);
-			@include trs
+			background-color: rgba(#35424A, 0.5);
+			@include mixins.trs;
 		}
 
 		&+strong {
@@ -148,7 +150,7 @@
 		@media (max-width:360px) {
 			&+strong {
 				margin-top: 13px;
-				font-size: fsz(12, 14);
+				font-size: mixins.fsz(12, 14);
 			}
 		}
 	}
@@ -157,9 +159,9 @@
 		display: block;
 		letter-spacing: 0.08em;
 		line-height: 1.3;
-		color: $cb;
+		color: var(--cb);
 		text-align: center;
-		@include trs;
+		@include mixins.trs;
 	}
 }
 
